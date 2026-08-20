@@ -40,7 +40,8 @@ const makers: ForgeConfig["makers"] = [
 
 makers.push(
   new MakerAppX({
-    certPass: "",
+    devCert: process.env.APPX_DEV_CERT,
+    certPass: process.env.APPX_CERT_PASS,
     packageExecutable: `app\\${STRINGS.execName}.exe`,
     publisher: "CN=B040CC7E-0016-4AF5-957F-F8977A6CFA3B",
   }),
