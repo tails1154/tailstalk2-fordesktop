@@ -1,11 +1,11 @@
 [Desktop Entry]
-Name=Stoat
+Name=TailsTalk 2
 Comment=Open source, user-first chat platform
-Exec=stoat-desktop
+Exec=TailsTalk 2-desktop
 Terminal=false
 Type=Application
-Icon=chat.stoat.StoatDesktop
+Icon=chat.tails1154.TailsTalk2Desktop
 Categories=Network;InstantMessaging
-StartupWMClass=stoat-desktop
+StartupWMClass=TailsTalk 2-desktop
 X-Desktop-File-Install-Version=0.26
-X-Flatpak=chat.stoat.StoatDesktop
+X-Flatpak=chat.tailstalk2.TailsTalk 2Desktop

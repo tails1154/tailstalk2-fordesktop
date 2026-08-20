@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Download Stoat for desktop." />
+    <title>Download Stoat for Desktop</title>
+    <link rel="icon" href="assets/web/icon.svg" />
+    <style>
+      :root {
+        color-scheme: dark;
+        --background: #111318;
+        --surface: #1b1e26;
+        --surface-hover: #242936;
+        --text: #f4f6fb;
+        --muted: #aeb5c5;
+        --accent: #8f9cff;
+        --accent-strong: #7180ff;
+        --border: #303644;
+      }
+
+      * { box-sizing: border-box; }
+
+      body {
+        min-height: 100vh;
+        margin: 0;
+        background: radial-gradient(circle at top, #252a3b 0, var(--background) 48rem);
+        color: var(--text);
+        font: 16px/1.5 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      }
+
+      main { width: min(960px, calc(100% - 32px)); margin: 0 auto; padding: 72px 0; }
+
+      header { max-width: 680px; margin-bottom: 40px; }
+
+      .brand { display: flex; align-items: center; gap: 14px; margin-bottom: 24px; }
+      .brand img { width: 52px; height: 52px; border-radius: 14px; }
+      .brand span { color: var(--muted); font-size: 14px; }
+
+      h1 { margin: 0 0 12px; font-size: clamp(2.2rem, 6vw, 4rem); letter-spacing: -0.05em; line-height: 1; }
+      .intro { margin: 0; color: var(--muted); font-size: 1.1rem; }
+
+      .downloads { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 16px; }
+
+      .card {
+        display: flex;
+        flex-direction: column;
+        min-height: 190px;
+        padding: 24px;
+        border: 1px solid var(--border);
+        border-radius: 18px;
+        background: color-mix(in srgb, var(--surface) 92%, transparent);
+      }
+
+      .card h2 { margin: 0 0 5px; font-size: 1.2rem; }
+      .card p { margin: 0 0 20px; color: var(--muted); }
+      .button { margin-top: auto; }
+
+      a.button {
+        display: inline-flex;
+        justify-content: center;
+        padding: 11px 16px;
+        border-radius: 10px;
+        background: var(--accent);
+        color: #10121c;
+        font-weight: 700;
+        text-decoration: none;
+      }
+
+      a.button:hover { background: var(--accent-strong); }
+
+      footer { margin-top: 36px; color: var(--muted); font-size: 0.9rem; }
+      footer a { color: var(--accent); }
+
+      @media (max-width: 560px) {
+        main { padding: 40px 0; }
+        .card { min-height: 0; }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <header>
+        <div class="brand">
+          <img src="assets/web/icon.svg" alt="Stoat" />
+          <div>Stoat<br /><span>Desktop application</span></div>
+        </div>
+        <h1>Download Stoat</h1>
+        <p class="intro">Choose the package for your operating system. Download links are ready for you to replace with your uploaded files.</p>
+      </header>
+
+      <section class="downloads" aria-label="Downloads">
+        <article class="card">
+          <h2>Windows installer</h2>
+          <p>Recommended for most Windows users.</p>
+          <!-- Replace the href with the uploaded Squirrel .exe URL. -->
+          <a class="button" href="#windows-installer">Download .exe</a>
+        </article>
+
+        <article class="card">
+          <h2>Windows package</h2>
+          <p>Install Stoat through Windows AppX.</p>
+          <!-- Replace the href with the uploaded AppX URL. -->
+          <a class="button" href="#windows-appx">Download .appx</a>
+        </article>
+
+        <article class="card">
+          <h2>macOS</h2>
+          <p>Portable ZIP package for macOS.</p>
+          <!-- Replace the href with the uploaded macOS ZIP URL. -->
+          <a class="button" href="#macos-zip">Download .zip</a>
+        </article>
+
+        <article class="card">
+          <h2>Linux Debian</h2>
+          <p>Install on Debian, Ubuntu, and compatible distributions.</p>
+          <!-- Replace the href with the uploaded Debian package URL. -->
+          <a class="button" href="#linux-deb">Download .deb</a>
+        </article>
+
+        <article class="card">
+          <h2>Linux portable</h2>
+          <p>Portable archive for other Linux distributions.</p>
+          <!-- Replace the href with the uploaded Linux ZIP URL. -->
+          <a class="button" href="#linux-zip">Download .zip</a>
+        </article>
+      </section>
+
+      <footer>
+        Need help? Visit <a href="https://stoat.chat">stoat.chat</a>.
+      </footer>
+    </main>
+  </body>
+</html>
