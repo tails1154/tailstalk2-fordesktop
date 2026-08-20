@@ -7,7 +7,11 @@ on:
 jobs:
   build:
     name: Build App
-    runs-on: ubuntu-latest
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
 
     steps:
       - name: Checkout
@@ -16,13 +20,26 @@ jobs:
       - name: Checkout assets
         run: git -c submodule."assets".update=checkout submodule update --init assets
 
-      - name: Setup Mise
-        uses: immich-app/devtools/actions/use-mise@cd24790a7f5f6439ac32cc94f5523cb2de8bfa8c # use-mise-action-v1.1.0
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
         with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
+          version: 10.18.1
+
+      - name: Install Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
 
       - name: Install dependencies
         run: pnpm install
 
       - name: Build
-        run: pnpm run package
+        run: pnpm make
+
+      - name: Upload Forge distributables
+        uses: actions/upload-artifact@v4
+        with:
+          name: stoat-${{ matrix.os }}
+          path: out/make/**
+          if-no-files-found: error
