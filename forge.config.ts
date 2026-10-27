@@ -39,12 +39,6 @@ const makers: ForgeConfig["makers"] = [
 ];
 
 makers.push(
-  new MakerAppX({
-    devCert: process.env.APPX_DEV_CERT,
-    certPass: process.env.APPX_CERT_PASS,
-    packageExecutable: `app\\${STRINGS.execName}.exe`,
-    publisher: "CN=B040CC7E-0016-4AF5-957F-F8977A6CFA3B",
-  }),
   new MakerDeb({
     options: {
       productName: STRINGS.name,
@@ -54,6 +48,17 @@ makers.push(
     },
   }),
 );
+
+if (!process.env.SKIP_APPX) {
+  makers.push(
+    new MakerAppX({
+      devCert: process.env.APPX_DEV_CERT,
+      certPass: process.env.APPX_CERT_PASS,
+      packageExecutable: `app\\${STRINGS.execName}.exe`,
+      publisher: "CN=B040CC7E-0016-4AF5-957F-F8977A6CFA3B",
+    }),
+  );
+}
 
 const config: ForgeConfig = {
   packagerConfig: {

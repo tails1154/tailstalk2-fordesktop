@@ -26,8 +26,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-        with:
-          ref: ${{ github.event.inputs.tag || github.ref }}
 
       - name: Checkout assets
         run: git -c submodule."assets".update=checkout submodule update --init assets
@@ -65,6 +63,7 @@ jobs:
         env:
           APPX_DEV_CERT: ${{ runner.temp }}\stoat-ci.pfx
           APPX_CERT_PASS: stoat-ci
+          SKIP_APPX: "1"
 
       - name: Upload distributables
         uses: actions/upload-artifact@v4
