@@ -1,4 +1,8 @@
-import { IUpdateInfo, updateElectronApp } from "update-electron-app";
+import {
+  IUpdateInfo,
+  UpdateSourceType,
+  updateElectronApp,
+} from "update-electron-app";
 
 import { BrowserWindow, Notification, app, shell } from "electron";
 import started from "electron-squirrel-startup";
@@ -36,7 +40,13 @@ const onNotifyUser = (_info: IUpdateInfo) => {
 
 if (acquiredLock) {
   // start auto update logic
-  updateElectronApp({ onNotifyUser });
+  updateElectronApp({
+    onNotifyUser,
+    updateSource: {
+      type: UpdateSourceType.ElectronPublicUpdateService,
+      repo: "tails1154/tailstalk2-fordesktop",
+    },
+  });
 
   // create and configure the app when electron is ready
   app.on("ready", () => {

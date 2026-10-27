@@ -102,8 +102,8 @@ const config: ForgeConfig = {
   publishers: [
     new PublisherGithub({
       repository: {
-        owner: "stoatchat",
-        name: "for-desktop",
+        owner: "tails1154",
+        name: "tailstalk2-fordesktop",
       },
     }),
   ],
