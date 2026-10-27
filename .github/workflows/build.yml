@@ -53,6 +53,7 @@ jobs:
         env:
           APPX_DEV_CERT: ${{ runner.temp }}\stoat-ci.pfx
           APPX_CERT_PASS: stoat-ci
+          SKIP_APPX: "1"
 
       - name: Upload Forge distributables
         uses: actions/upload-artifact@v4
