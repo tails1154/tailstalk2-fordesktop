@@ -12,7 +12,7 @@ import { FuseV1Options, FuseVersion } from "@electron/fuses";
 
 const STRINGS = {
   author: "Revolt Platforms LTD",
-  name: "Stoat",
+  name: "Tailstalk 2",
   execName: "stoat-desktop",
   description: "Open source user-first chat platform.",
 };

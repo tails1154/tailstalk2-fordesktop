@@ -5,7 +5,7 @@ import { ipcMain } from "electron";
 import { mainWindow } from "./window";
 
 export const autoLaunch = new AutoLaunch({
-  name: "TailsTalk 2",
+  name: "Tailstalk 2",
 });
 
 ipcMain.handle("getAutostart", async () => {

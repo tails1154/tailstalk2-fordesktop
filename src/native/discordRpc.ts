@@ -16,13 +16,13 @@ export async function initDiscordRpc() {
 
     rpc.on("ready", () =>
       rpc.setActivity({
-        state: "TailsTalk 2",
+        state: "Tailstalk 2",
         details: "Chatting with others",
         largeImageKey: "",
-        largeImageText: "TailsTalking 2",
+        largeImageText: "Tailstalk 2",
         buttons: [
           {
-            label: "Join TailsTalk 2",
+            label: "Join Tailstalk 2",
             url: "https://tails1154.com:9961/invite/tailstalk2",
           },
         ],
